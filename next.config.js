@@ -1,3 +1,5 @@
+const { PHASE_EXPORT } = require('next/constants')
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -52,6 +54,13 @@ const securityHeaders = [
   },
 ]
 
+const headers = async () => ([
+  {
+    source: '/(.*)',
+    headers: securityHeaders,
+  },
+]);
+
 const images = {
   loader: 'imgix',
   path: ['https://peterhs.github.io/'],
@@ -60,38 +69,35 @@ const images = {
 // github page root directory
 const basePath = ''
 
-module.exports = withBundleAnalyzer({
-  reactStrictMode: true,
-  pageExtensions: ['js', 'jsx', 'md', 'mdx'],
-  eslint: {
-    dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
-  },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ]
-  },
-  webpack: (config, { dev, isServer }) => {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    })
+module.exports = (phase, { defaultConfig }) => {
+  console.log('>>>> phase:', phase);
 
-    if (!dev && !isServer) {
-      // Replace React with Preact only in client production build
-      Object.assign(config.resolve.alias, {
-        'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
+  return withBundleAnalyzer({
+    reactStrictMode: true,
+    pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+    eslint: {
+      dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
+    },
+    // headers,
+    webpack: (config, { dev, isServer }) => {
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       })
-    }
 
-    return config
-  },
-  images,
-  basePath,
-})
+      if (!dev && !isServer) {
+        // Replace React with Preact only in client production build
+        Object.assign(config.resolve.alias, {
+          'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
+          react: 'preact/compat',
+          'react-dom/test-utils': 'preact/test-utils',
+          'react-dom': 'preact/compat',
+        })
+      }
+
+      return config
+    },
+    ...(phase === PHASE_EXPORT ? { images } : {}),
+    basePath,
+  });
+}
