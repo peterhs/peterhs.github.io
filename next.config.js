@@ -97,7 +97,8 @@ module.exports = (phase, { defaultConfig }) => {
 
       return config
     },
-    ...(phase === PHASE_EXPORT ? { images } : {}),
+    //...(phase === PHASE_EXPORT ? { images } : {}),
+    images,
     basePath,
   });
 }
