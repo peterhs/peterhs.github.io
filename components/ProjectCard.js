@@ -38,13 +38,18 @@ const ProjectCard = ({ title, description, imgSrc, href, techs }) => (
             title
           )}
         </h2>
-        {
-          techs && techs.length > 0 && techs.map((e) => (
-            <Image key={e} alt={e} src={`/static/images/icon-${e}.png`}
-              className="object-cover object-center md:h-30 lg:h-30 py-2"
-              width={25} height={25}
+        {techs &&
+          techs.length > 0 &&
+          techs.map((e) => (
+            <Image
+              key={e}
+              alt={e}
+              src={`/static/images/icon-${e}.png`}
+              className="px-2"
+              width={25}
+              height={25}
             />
-        ))}
+          ))}
         <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
         {href && (
           <Link
