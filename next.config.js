@@ -58,7 +58,7 @@ const images = {
 }
 
 // github page root directory
-const basePath = '/docs'
+const basePath = ''
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
