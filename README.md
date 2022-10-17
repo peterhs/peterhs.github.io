@@ -1,3 +1,3 @@
-# peterk.page
+# peterhs.page
 
 Blog using Next.JS

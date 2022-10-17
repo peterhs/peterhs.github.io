@@ -54,8 +54,11 @@ const securityHeaders = [
 
 const images = {
   loader: 'imgix',
-  path: ['localhost:3000'],
+  path: ['https://peterhs.github.io/'],
 }
+
+// github page root directory
+const basePath = '/docs'
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
@@ -90,4 +93,5 @@ module.exports = withBundleAnalyzer({
     return config
   },
   images,
+  basePath,
 })
