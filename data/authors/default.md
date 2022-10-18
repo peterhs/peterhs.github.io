@@ -9,59 +9,58 @@ email: peterhs.kang@gmail.com
 github: https://github.com
 ---
 
-    <p className="lead">Deep Learning</p>
-        - PyTorch
-        - TensorFlow
+##
+## Deep Learning
+##
 
-    <p className="lead">Front-end</p>
-    <dl className="row">
-        <dt className="col-sm-3">Language</dt>
-        <dd className="col-sm-9">TypeScript</dd>
+#### Language
+- Python
+- JavaScript
 
-        <dt className="col-sm-3">Framework</dt>
-        <dd className="col-sm-9">React with NextJS</dd>
+#### Framework
+- PyTorch
+- TensorFlow
 
-        <dt className="col-sm-3">UI System</dt>
-        <dd className="col-sm-9">Bootstrap</dd>
+##
+## Front-end
+##
 
-        <dt className="col-sm-3">Cache System</dt>
-        <dd className="col-sm-9">Redux Toolkit</dd>
+#### Language
+- TypeScript
 
-        <dt className="col-sm-3 text-truncate">REST API Library</dt>
-        <dd className="col-sm-9">RTK Query</dd>
+#### Framework
+- React with NextJS
 
-        <dt className="col-sm-3">I18N Library</dt>
-        <dd className="col-sm-9">i18next</dd>
+#### UI System
+- Bootstrap
 
-        <dt className="col-sm-3">Build System</dt>
-        <dd className="col-sm-9">Nx</dd>
+#### Cache System
+- Redux Toolkit
 
-        <dt className="col-sm-3">Test Framework</dt>
-        <dd className="col-sm-9">
-        <dl className="row">
-            <dt className="col-sm-4">Unit Test</dt>
-            <dd className="col-sm-8">Jest</dd>
+#### REST API Library
+- RTK Query
 
-            <dt className="col-sm-4">E2E Test</dt>
-            <dd className="col-sm-8">Cypress</dd>
+#### I18N Library
+- i18next
 
-            <dt className="col-sm-4">UI Test</dt>
-            <dd className="col-sm-8">Storybook</dd>
+#### Build System
+- Nx
 
-            <dt className="col-sm-4">Mock Server</dt>
-            <dd className="col-sm-8">msw</dd>
-        </dl>
-        </dd>
-    </dl>
+#### Test Framework
+- Unit Test: Jest
+- E2E Test: Cypress
+- UI Test: Storybook
+- Mock Server: msw
 
-    <p className="lead">Back-end</p>
-    <dl className="row">
-        <dt className="col-sm-3">Lanuage</dt>
-        <dd className="col-sm-9">TypeScript with Javascript</dd>
+##
+## Back-end
+##
 
-        <dt className="col-sm-3">Framework</dt>
-        <dd className="col-sm-9">Strapi</dd>
+#### Lanuage
+- TypeScript
 
-        <dt className="col-sm-3">Database</dt>
-        <dd className="col-sm-9">PostgreSQL</dd>
-    </dl>
+#### Framework
+- Strapi
+
+#### Database
+- PostgreSQL
