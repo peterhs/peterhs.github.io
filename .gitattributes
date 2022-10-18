@@ -201,5 +201,13 @@ Procfile          text
 # Ignore files (like .npmignore or .gitignore)
 *.*ignore         text
 
+# minimized
+*.min.js          binary
+
+# misc
+*.tflite          binary
+*.wasm            binary
+*.binarypb        binary
+
 # output folder
 /docs/*           binary

@@ -16,9 +16,12 @@ public/sitemap.xml
 
 # production
 /build
-*.xml
-# rss feed
+
+# rss feed and sitemap
+/public/tags/
+/public/*.xml
 /public/feed.xml 
+/public/sitemap.xml 
 
 # misc
 .DS_Store
